@@ -1,0 +1,77 @@
+// scss/pages/_exercise.scss o _home.scss
+
+.hero-mini {
+    background-color: $color-dark-form; // Negro como el prototipo
+    padding: 60px 0;
+    color: $color-light;
+    
+    &__title {
+        font-family: $font-primary;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        @media (min-width: 768px) { font-size: 4rem; }
+    }
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: -40px; // Sube un poco para entrar en el hero
+    color: $color-dark-text;
+
+    &__section-title {
+        font-family: $font-primary;
+        color: $color-dark-text;
+        border-left: 5px solid $color-dark-form;
+        padding-left: 15px;
+        margin: 30px 0 20px;
+    }
+
+    &__label {
+        font-family: $font-secondary;
+        font-weight: bold;
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+        color: #555;
+    }
+
+    &__input, &__textarea {
+        width: 100%;
+        border: 1px solid #ddd;
+        padding: 12px;
+        border-radius: 8px;
+        font-family: $font-secondary;
+        transition: all 0.3s;
+
+        &:focus {
+            outline: none;
+            border-color: $color-dark-form;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+    }
+
+    &__guardian-box {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 20px;
+    }
+}
+
+.btn-enviar {
+    background-color: $color-dark-form;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-family: $font-primary;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: scale(1.05);
+        background-color: lighten($color-dark-form, 10%);
+    }
+}
