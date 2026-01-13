@@ -5,105 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscripción - Alto Tennis</title>
     
-    <!-- Bootstrap 5 (La versión más nueva para que todo se vea ordenado) -->
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Mi archivo de estilos compilado de SASS -->
+    <!-- Mi CSS compilado (ajusta la ruta si tu carpeta es distinta, generalmente es css/main.css) -->
     <link rel="stylesheet" href="scss/main.css">
-    <!-- Fuente para los títulos potentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Anton (Títulos) y Roboto (Cuerpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="hero-mini">
-        <div class="container text-center">
-            <!-- Este mensaje es para ti: que nadie detenga tu progreso -->
-            <h1 class="hero-mini__title">TU TALENTO ES MÁS GRANDE QUE CUALQUIER TRABA EXTERNA</h1>
-            <p class="hero-mini__subtitle">Inscripciones abiertas - Escuela Alto Tennis</p>
-        </div>
-    </header>
-
-    
-    <main class="registration">
+    <!-- Navegación: La rescaté de tu primer código -->
+    <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100" style="background-color: transparent; z-index: 10;">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-8">
-                    
-                    <!-- Aquí empieza lo bueno: el formulario -->
-                    <form id="formInscripcion" class="form-container">
+            <a class="navbar-brand" href="#">
+                <!-- 
+              
+                alt: Es vital para que Google y personas con discapacidad visual sepan qué es.
+                -->
+                <img src="img/logo-alto-tennis-2025-01.png" alt="Logo Alto Tennis" class="navbar__logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#miMenu" aria-controls="miMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!--
+            <div class="collapse navbar-collapse" id="miMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item"><a class="nav-link px-3 text-uppercase small fw-bold" href="#">MISIÓN</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-uppercase small fw-bold" href="#">Calendario</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-uppercase small fw-bold" href="#">NUESTROS CAMPEONES</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-uppercase small fw-bold" href="#">LA Escuela</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="#formInscripcion" class="btn btn-light rounded-pill px-4 fw-bold text-uppercase" style="font-size: 0.8rem;">Únete al Club</a>
+                    </li>
+                </ul>
+            </div>
+            -->
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="row align-items-center min-vh-100 py-5">
+                
+                <!-- Lado Izquierdo: Tu mensaje de resiliencia -->
+                <div class="col-lg-6 text-center text-lg-start mt-5 mt-lg-0">
+                    <h1 class="hero__title">
+                        INSCRÍBETE.<br>
+                        EL PARTIDO<br>
+                        COMIENZA<br>
+                        HOY.<br>
                         
-                        <h2 class="form-container__section-title">1. Datos del Alumno/a</h2>
+                    </h1>
+                    <p class="hero__subtitle">
+                        Súmate a un espacio para crecer, aprender y avanzar punto a punto.
+                    </p>
+
+                </div>
+
+                <!-- Lado Derecho: Formulario cayendo sobre el Hero -->
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <form id="formInscripcion" class="form-card shadow-lg">
+                        <h2 class="form-card__title">FICHA DE INSCRIPCIÓN</h2>
+                        
+                        <!-- Datos Alumno -->
+                        <div class="form-card__group">
+                            <label class="form-card__label">Nombre del Alumno/a</label>
+                            <input type="text" name="nombre_alumno" class="form-card__input" required>
+                        </div>
+
                         <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="form-container__label">Nombre Completo</label>
-                                <input type="text" name="nombre_alumno" class="form-container__input" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label class="form-container__label">Edad</label>
-                                <input type="number" name="edad" id="inputEdad" class="form-container__input" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label class="form-container__label">Género</label>
-                                <select name="genero" class="form-container__input">
-                                    <option value="femenino">Femenino</option>
-                                    <option value="masculino">Masculino</option>
-                                    <option value="otro">Otro</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="form-container__label">¿Alguna condición de salud o alergia?</label>
-                            <textarea name="salud" class="form-container__textarea" rows="2" placeholder="Ej: Asma, usa inhalador..."></textarea>
-                        </div>
-
-                        <!-- Esta sección se puede mostrar/ocultar con JS si es menor de edad -->
-                        <div id="seccionApoderado" class="form-container__guardian-box">
-                            <h2 class="form-container__section-title">2. Datos del Apoderado</h2>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-container__label">Nombre del Apoderado</label>
-                                    <input type="text" name="nombre_apoderado" class="form-container__input">
+                            <div class="col-6">
+                                <div class="form-card__group">
+                                    <label class="form-card__label">Edad</label>
+                                    <input type="number" name="edad" id="inputEdad" class="form-card__input" required>
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-container__label">Parentesco</label>
-                                    <input type="text" name="parentesco" class="form-container__input" placeholder="Ej: Madre, Padre, Abuelo">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-container__label">Teléfono de contacto</label>
-                                    <input type="tel" name="telefono" class="form-container__input">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-container__label">Correo Electrónico</label>
-                                    <input type="email" name="email" class="form-container__input">
+                            </div>
+                            <div class="col-6">
+                                <div class="form-card__group">
+                                    <label class="form-card__label">Género</label>
+                                    <select name="genero" class="form-card__input">
+                                        <option value="femenino">Femenino</option>
+                                        <option value="masculino">Masculino</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-container__commitment mt-4">
-                            <h3 class="h5">Compromiso Alto Tennis</h3>
-                            <p class="small">Me comprometo a respetar las normas de la escuela, cuidar el material y mantener un espíritu deportivo dentro y fuera de la cancha. Entiendo que la constancia es la clave del éxito.</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="checkCompromiso" required>
-                                <label class="form-check-label" for="checkCompromiso">
-                                    Acepto el compromiso y las condiciones.
-                                </label>
+                        <div class="form-card__group">
+                            <label class="form-card__label">Condición de Salud / Alergias</label>
+                            <textarea name="salud" class="form-card__textarea" rows="2" placeholder="Ej: Asma, lesiones..."></textarea>
+                        </div>
+
+                        <!-- Datos Apoderado -->
+                        <div class="form-card__divider">DATOS DEL APODERADO</div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-card__group">
+                                    <label class="form-card__label">Nombre Apoderado</label>
+                                    <input type="text" name="nombre_apoderado" class="form-card__input">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-card__group">
+                                    <label class="form-card__label">Teléfono</label>
+                                    <input type="tel" name="telefono" class="form-card__input">
+                                </div>
                             </div>
                         </div>
 
-                        <div class="text-center mt-5">
-                            <button type="submit" class="btn-enviar">FINALIZAR INSCRIPCIÓN</button>
-                        </div>
-
+                        <button type="submit" class="form-card__btn-submit mt-3">
+                            ENVIAR INSCRIPCIÓN
+                        </button>
+                        
+                        <p class="form-card__footer-text">
+                            Tu educación es la mejor inversión para superar cualquier obstáculo externo.
+                        </p>
                     </form>
-
-                    <!-- Mensaje motivador final en el pie del formulario -->
-                    <p class="text-center mt-4 text-muted">A pesar de las injusticias del sistema, tu educación es la mejor inversión. ¡Dale con todo!</p>
                 </div>
             </div>
         </div>
-    </main>
+    </header>
 
-    <!-- Scripts: Primero jQuery, luego Bootstrap y al final mi app.js -->
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app.js"></script>
