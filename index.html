@@ -61,6 +61,24 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
+                            <label class="form-card__label">RUT del Alumno</label>
+                            <!-- Agregamos maxlength="12" para que no escriban un papiro -->
+                            <input type="text" name="rut" id="inputRut" class="form-card__input" 
+                                placeholder="12.345.678-9" maxlength="12" required>
+                            <!-- Mensaje de error en rojo, bien visible -->
+                            <div id="rutError" class="text-danger fw-bold small mt-1" style="display:none;">
+                                ⚠️ El RUT ingresado no es válido.
+                            </div>
+                            <!-- ERROR 2: RUT ya registrado (El nuevo mensaje) -->
+                            <div id="rutDuplicadoError" class="text-danger fw-bold small mt-1" style="display:none;">
+                                ⚠️ Este RUT ya se encuentra inscrito en nuestra base de datos.
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
                             <label class="form-card__label">Fecha de Nacimiento</label>
                             <input type="date" name="fecha_nacimiento" id="fechaNacimiento" class="form-card__input" required>
                         </div>
@@ -96,14 +114,15 @@
                                             required>
                         </div>
                     </div>
-
+                    <!-- NUEVA UBICACIÓN DEL AVISO: Justo después del contacto -->
+                    <!-- Le puse un ID para que el JS sepa que tiene que mostrarlo u ocultarlo -->
+                    <p id="avisoMenorEdad" class="small mb-3" style="color: #000; display: none;">
+                        ⚠️ Al ser menor de edad, el correo y teléfono deben ser del apoderado.
+                    </p>
                     <!-- SECCIÓN APODERADO -->
                     <div id="seccionApoderado" style="display: none;">
                         <!-- Cambio 1: Ahora usa el mismo estilo de título -->
-                        <h2 class="form-card__title mt-4">2. Datos del Apoderado</h2>
-                        <!-- Cambio 2: Texto en negro -->
-                        <p class="small mb-3" style="color: #000;">⚠️ Al ser menor de edad, el correo y teléfono arriba deben ser del apoderado.</p>
-                        
+                        <h2 class="form-card__title mt-4">2. Datos del Apoderado</h2>                        
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label class="form-card__label">Primer Nombre</label>
