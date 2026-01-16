@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   scroll-behavior: smooth;
 }
@@ -66,52 +67,91 @@ html {
   font-weight: bold;
 }
 
+/* -----------------------------------------------------------
+   ESTILOS DEL FORMULARIO DE INSCRIPCIÓN
+   Diseño compacto para mejorar la visualización en pantalla.
+----------------------------------------------------------- */
 .form-card {
   background-color: rgba(255, 255, 255, 0.98);
-  padding: 35px;
+  padding: 25px 30px;
   border-radius: 25px;
   color: #1a1a1a;
-  max-width: 550px;
+  max-width: 580px;
   margin: 0 auto;
 }
 .form-card__title {
-  font-family: "Anton", sans-serif !important;
-  font-size: 2rem;
+  font-family: "Anton", sans-serif;
+  font-size: 1.8rem;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: #000;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.form-card__divider {
-  font-family: "Roboto", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #888;
-  margin: 25px 0 15px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 5px;
-}
 .form-card__group {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 .form-card__label {
   display: block;
   font-family: "Roboto", sans-serif;
   font-size: 0.85rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+  color: #333;
 }
 .form-card__input, .form-card__textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
   border-radius: 10px;
   font-family: "Roboto", sans-serif;
-  transition: border-color 0.3s;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 .form-card__input:focus, .form-card__textarea:focus {
   outline: none;
+  border-color: #000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.form-card__textarea {
+  resize: none;
+}
+.form-card__commitment {
+  background-color: #f9f9f9;
+  border: 1px solid #eee !important;
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 15px;
+  max-height: 110px;
+  overflow-y: auto;
+}
+.form-card__commitment p {
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: #000;
+  margin-bottom: 0;
+}
+.form-card__commitment .form-check {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+.form-card__commitment .form-check-label {
+  font-size: 0.85rem;
+  color: #000;
+  cursor: pointer;
+}
+.form-card__commitment .form-check-input {
+  border: 1.5px solid #000 !important;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.form-card__commitment .form-check-input:checked {
+  background-color: #000;
+  border-color: #000;
+}
+.form-card__commitment .form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.1);
   border-color: #000;
 }
 .form-card__btn-submit {
@@ -119,23 +159,38 @@ html {
   background-color: #000;
   color: #fff;
   border: none;
-  padding: 18px;
+  padding: 14px;
   border-radius: 50px;
   font-family: "Anton", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 1px;
-  transition: 0.3s;
+  margin-top: 15px;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 .form-card__btn-submit:hover {
   background-color: #333;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+.form-card__btn-submit:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
 .form-card__footer-text {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-align: center;
-  margin-top: 20px;
-  color: #999;
+  margin-top: 15px;
+  color: #888;
   font-style: italic;
+}
+
+#seccionApoderado {
+  border-top: 2px solid #eee;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+#seccionApoderado p.small {
+  color: #000 !important;
+  font-weight: 500;
 }/*# sourceMappingURL=main.css.map */

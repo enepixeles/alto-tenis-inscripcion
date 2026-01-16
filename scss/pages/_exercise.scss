@@ -1,33 +1,29 @@
+/* -----------------------------------------------------------
+   ESTILOS DEL FORMULARIO DE INSCRIPCIÓN
+   Diseño compacto para mejorar la visualización en pantalla.
+----------------------------------------------------------- */
+
 .form-card {
     background-color: rgba(255, 255, 255, 0.98);
-    padding: 35px;
+    padding: 25px 30px; // Un poco más apretado para que quepa todo
     border-radius: 25px;
     color: $color-dark-text;
-    max-width: 550px;
+    max-width: 580px;
     margin: 0 auto;
 
+    // Título principal y de secciones (se ven igual como pediste)
     &__title {
-        font-family: $font-primary !important;
-        font-size: 2rem;
+        font-family: $font-primary;
+        font-size: 1.8rem;
         text-align: center;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         color: #000;
         text-transform: uppercase;
         letter-spacing: 1px;
     }
 
-    &__divider {
-        font-family: $font-secondary;
-        font-size: 0.75rem;
-        font-weight: 700;
-        color: #888;
-        margin: 25px 0 15px;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 5px;
-    }
-
     &__group {
-        margin-bottom: 15px;
+        margin-bottom: 12px; // Espaciado reducido para ganar altura
     }
 
     &__label {
@@ -35,48 +31,122 @@
         font-family: $font-secondary;
         font-size: 0.85rem;
         font-weight: bold;
-        margin-bottom: 5px;
+        margin-bottom: 4px;
+        color: #333;
     }
 
     &__input, &__textarea {
         width: 100%;
-        padding: 12px;
-        border: 1px solid #ddd;
+        padding: 8px 12px; // Inputs más delgados pero cómodos
+        border: 1px solid #ccc;
         border-radius: 10px;
         font-family: $font-secondary;
-        transition: border-color 0.3s;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
 
         &:focus {
             outline: none;
             border-color: #000;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
         }
     }
 
+    &__textarea {
+        resize: none; // Evitamos que el usuario deforme el diseño
+    }
+
+    // Caja de compromiso con scroll interno para ahorrar espacio
+    &__commitment {
+        background-color: #f9f9f9;
+        border: 1px solid #eee !important;
+        border-radius: 10px;
+        padding: 12px;
+        margin-top: 15px;
+        max-height: 110px; // Altura máxima fija
+        overflow-y: auto;  // Activa el scroll si el texto sobra
+        
+        p {
+            font-size: 0.78rem;
+            line-height: 1.4;
+            color: #000;
+            margin-bottom: 0;
+        }
+
+        // Estilo del checkbox dentro de la caja
+        .form-check {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .form-check-label {
+            font-size: 0.85rem;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .form-check-input {
+            border: 1.5px solid #000 !important; // Borde negro más marcado
+            cursor: pointer;
+            border-radius: 4px; // Un poquito redondeado para que se vea moderno
+            
+            &:checked {
+                background-color: #000; // Cuando lo marcan, se pinta negro
+                border-color: #000;
+            }
+            
+            &:focus {
+                box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.1); // Sombra suave al hacer clic
+                border-color: #000;
+            }
+        }
+    }
+
+    // El botón de acción principal
     &__btn-submit {
         width: 100%;
         background-color: #000;
         color: #fff;
         border: none;
-        padding: 18px;
+        padding: 14px;
         border-radius: 50px;
         font-family: $font-primary;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         letter-spacing: 1px;
-        transition: 0.3s;
+        margin-top: 15px;
+        transition: all 0.3s ease;
         cursor: pointer;
 
         &:hover {
             background-color: #333;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        &:disabled {
+            background-color: #666;
+            cursor: not-allowed;
         }
     }
 
     &__footer-text {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         text-align: center;
-        margin-top: 20px;
-        color: #999;
+        margin-top: 15px;
+        color: #888;
         font-style: italic;
+    }
+}
+
+// Estilos específicos para cuando aparece el apoderado
+#seccionApoderado {
+    border-top: 2px solid #eee;
+    margin-top: 20px;
+    padding-top: 10px;
+    
+    // El texto de advertencia en negro
+    p.small {
+        color: #000 !important;
+        font-weight: 500;
     }
 }
