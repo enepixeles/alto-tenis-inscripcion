@@ -6,7 +6,7 @@ $(document).ready(function() {
     
     // 1. Configuración de la planilla (Google Sheets)
     // ¡No olvides poner tu URL real aquí!
-    const scriptURL = 'TU_URL_DE_GOOGLE_AQUÍ';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyK8lZg09tWLVg1x-JOrchOcRj82GCVYNHU8WCgsytzw8zPttRgLMDeNrfiZudWLX_NVg/exec';
     const $form = $('#formInscripcion');
 
     // 2. Cálculo de Edad y Sección Apoderado

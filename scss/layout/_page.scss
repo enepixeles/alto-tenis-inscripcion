@@ -1,17 +1,18 @@
-// Estilos para el logo del menú
 .navbar {
     &__logo {
-        height: 120px !important;      // Altura ideal para móviles
-        width: auto;       // Para que mantenga la proporción y no se vea aplastado
-        display: block;    
-        transition: transform 0.3s ease; // Un pequeño efecto suave
+        // --- Versión Celular (Mobile First) ---
+        display: none;      // <--- ¡Esta es la línea mágica! Lo esconde por defecto.
 
-        &:hover {
-            transform: scale(1.05); // Se agranda un poquito al pasar el mouse
-        }
-
+        // --- Versión Computador (Desktop) ---
         @media (min-width: 768px) {
-            height: 55px;  // En computador lo hacemos brillar un poco más
+            display: block; // Aquí le decimos que vuelva a aparecer
+            height: 100px;   // Mantenemos el tamaño que ya te gustaba
+            width: auto;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
         }
     }
 }

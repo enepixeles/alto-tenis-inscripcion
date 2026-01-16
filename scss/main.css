@@ -4,17 +4,17 @@ html {
 }
 
 .navbar__logo {
-  height: 120px !important;
-  width: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-.navbar__logo:hover {
-  transform: scale(1.05);
+  display: none;
 }
 @media (min-width: 768px) {
   .navbar__logo {
-    height: 55px;
+    display: block;
+    height: 100px;
+    width: auto;
+    transition: transform 0.3s ease;
+  }
+  .navbar__logo:hover {
+    transform: scale(1.05);
   }
 }
 
@@ -36,12 +36,13 @@ html {
   line-height: 0.9;
   letter-spacing: -1px;
   margin-bottom: 1rem;
-  margin-top: 100px;
+  margin-top: 0px;
 }
 @media (min-width: 768px) {
   .hero__title {
     font-size: 8.5rem !important;
     line-height: 0.9;
+    margin-top: 80px;
   }
 }
 .hero__subtitle {

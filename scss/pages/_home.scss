@@ -20,7 +20,7 @@
         line-height: 0.9;
         letter-spacing: -1px;
         margin-bottom: 1rem;
-        margin-top: 100px; 
+        margin-top: 0px; 
         
 
         // --- Versión Computador (Desktop) ---
@@ -28,6 +28,7 @@
         @media (min-width: 768px) {
             font-size: 8.5rem  !important; // Aquí mantenemos el tamaño gigante que te gustó
             line-height: 0.9;
+            margin-top: 80px;
         }
     }
 
