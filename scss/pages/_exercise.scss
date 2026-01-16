@@ -150,3 +150,40 @@
         font-weight: 500;
     }
 }
+
+// -----------------------------------------------------------
+// AJUSTES FINALES CALENDARIO FLATPICKR
+// -----------------------------------------------------------
+
+// 1. Días NO seleccionables (Gris oscuro y letra light)
+.flatpickr-day.flatpickr-disabled, 
+.flatpickr-day.flatpickr-disabled:hover {
+    color: #444444 !important;
+    font-weight: 300 !important;
+    opacity: 1 !important;
+    background: transparent !important;
+}
+
+// 2. Sábados disponibles (Negro y Bold)
+.flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay) {
+    color: #000000 !important;
+    font-weight: 900 !important;
+    border-radius: 8px;
+}
+
+// 3. DÍA SELECCIONADO (La solución al problema)
+// Usamos mayor especificidad para obligar al color blanco
+.flatpickr-calendar .flatpickr-day.selected, 
+.flatpickr-calendar .flatpickr-day.selected:hover,
+.flatpickr-calendar .flatpickr-day.selected:focus {
+    background: #000000 !important;
+    color: #ffffff !important; // <--- ¡Aquí está la magia! Letra blanca.
+    border-color: #000000 !important;
+    font-weight: 900 !important;
+}
+
+// 4. Color de los nombres de los días arriba
+.flatpickr-weekday {
+    color: #000000 !important;
+    font-weight: bold !important;
+}

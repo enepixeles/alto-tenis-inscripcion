@@ -194,4 +194,32 @@ html {
 #seccionApoderado p.small {
   color: #000 !important;
   font-weight: 500;
+}
+
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover {
+  color: #444444 !important;
+  font-weight: 300 !important;
+  opacity: 1 !important;
+  background: transparent !important;
+}
+
+.flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay) {
+  color: #000000 !important;
+  font-weight: 900 !important;
+  border-radius: 8px;
+}
+
+.flatpickr-calendar .flatpickr-day.selected,
+.flatpickr-calendar .flatpickr-day.selected:hover,
+.flatpickr-calendar .flatpickr-day.selected:focus {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+.flatpickr-weekday {
+  color: #000000 !important;
+  font-weight: bold !important;
 }/*# sourceMappingURL=main.css.map */
